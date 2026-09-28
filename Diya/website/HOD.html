@@ -1,0 +1,219 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Computer Department | HOD Profile</title>
+    <style>
+        /* Modern Reset & Global Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.7;
+        }
+
+        /* Clean Header */
+        header {
+            background-color: #ffffff;
+            padding: 25px 20px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        header h1 {
+            color: #0f172a;
+            font-size: 2.2rem;
+            font-weight: 700;
+            letter-spacing: -0.5px;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1e3a8a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-container a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 24px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container a:hover {
+            background-color: #2563eb;
+        }
+
+        /* Hero Banner */
+        .hero-banner {
+            width: 100%;
+            height: 300px;
+            overflow: hidden;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Container */
+        .container {
+            max-width: 1100px;
+            margin: 50px auto;
+            padding: 0 20px;
+        }
+
+        /* Section Heading */
+        .section-title {
+            color: #0f172a;
+            font-size: 1.8rem;
+            margin-bottom: 40px;
+            border-left: 5px solid #2563eb;
+            padding-left: 15px;
+        }
+
+        /* Profile Layout Grid */
+        .profile-grid {
+            display: grid;
+            grid-template-columns: 320px 1fr;
+            gap: 40px;
+            background: #ffffff;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            border: 1px solid #e2e8f0;
+        }
+
+        /* Left Side: Avatar Card */
+        .profile-card {
+            text-align: center;
+            background: #f8fafc;
+            padding: 30px 20px;
+            border-radius: 8px;
+            border: 1px solid #e2e8f0;
+            height: fit-content;
+        }
+
+        .profile-card img {
+            width: 180px;
+            height: 180px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 5px solid #ffffff;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+
+        .profile-card h3 {
+            color: #0f172a;
+            font-size: 1.4rem;
+            margin-bottom: 4px;
+        }
+
+        .profile-card p {
+            color: #2563eb;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        /* Right Side: Biography Content */
+        .profile-bio p {
+            font-size: 1.05rem;
+            color: #475569;
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+
+        .profile-bio p:last-child {
+            margin-bottom: 0;
+        }
+
+        /* Responsive Breakpoints */
+        @media (max-width: 768px) {
+            .profile-grid {
+                grid-template-columns: 1fr;
+                gap: 30px;
+                padding: 20px;
+            }
+
+            header h1 {
+                font-size: 1.8rem;
+            }
+
+            .profile-card {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header Branding -->
+    <header>
+        <h1>MCA Computer Department</h1>
+    </header>
+
+    <!-- Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="Home.html">About the Department</a>
+            <a href="HOD.html">HOD Profile</a>
+            <a href="Faculty.html">Faculty Details</a>
+            <a href="MCA_Association.html">MCA Association Details</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+   
+    <!-- Main Content Container -->
+    <main class="container">
+        
+        <h2 class="section-title">HOD - Master of Computer Applications (MCA)</h2>
+
+        <div class="profile-grid">
+            
+            <!-- Left Profile Component -->
+            <aside class="profile-card">
+                <img src="hodimg.jpg" alt="Prof. Sreeja K">
+                <h3>Prof. Sreeja K</h3>
+                <p>HOD, MCA</p>
+            </aside>
+
+            <!-- Right Biography Component -->
+            <article class="profile-bio">
+                <p>Prof. Sreeja K. obtained her Master's degree (MCA) from Government Engineering College, Thrissur, Kerala. She joined Mohandas College of Engineering and Technology (MCET) in 2003 as a System Analyst, where she was in charge of monitoring, administering, and analyzing campus automation software, managing the architectural design and administration of the campus network, and integrating data arrays across the institution.</p>
+                
+                <p>She transitioned to the academic faculty in 2007, serving as an Assistant Professor in the Department of MCA. Since 2014, she has additionally undertaken the leadership responsibilities as the Head of the Department (HOD) of MCA.</p>
+
+                <p>Before joining MCET, she worked as a System Analyst at the State Project Director’s Office, DPEP, Trivandrum, leading the state MIS unit of the project implementation body. Her domain expertise included educational planning, budget preparation, and monitoring and analysis of key developmental variables across institutional project landscapes. She was also an active member of the National Implementation Team for DISE (District Information System for Education).</p>
+            </article>
+
+        </div>
+
+    </main>
+
+</body>
+</html>

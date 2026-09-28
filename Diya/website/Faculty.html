@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Computer Department</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f6f9;
+            color: #333;
+            text-align: center;
+        }
+
+        h1 {
+            color: #1a365d;
+            margin: 30px 0 20px 0;
+            font-size: 2.5rem;
+        }
+
+        h2 {
+            margin: 0;
+            font-size: 1.2rem;
+            color: #2c3e50;
+        }
+
+        .designation {
+            font-size: 0.95rem;
+            color: #7f8c8d;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+
+        /* Navigation Menu */
+        nav {
+            background-color: #1a365d;
+            padding: 15px 0;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 25px;
+            flex-wrap: wrap;
+        }
+
+        .nav-container a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: color 0.3s ease;
+        }
+
+        .nav-container a:hover {
+            color: #3498db;
+        }
+
+        /* Faculty Section Heading */
+        .section-title {
+            margin: 40px 0 20px 0;
+            color: #2c3e50;
+            font-size: 1.8rem;
+            border-bottom: 2px solid #3498db;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+
+        /* Faculty Grid Layout */
+        .faculty-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        /* Faculty Card */
+        .faculty-card {
+            background: #ffffff;
+            border-radius: 8px;
+            padding: 20px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+
+        .faculty-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .faculty-card img {
+            width: 150px;
+            height: 150px;
+            border-radius: 50%;
+            object-fit: cover;
+            margin-bottom: 15px;
+            border: 3px solid #3498db;
+            background-color: #eaeaea; /* Fallback placeholder color */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header -->
+    <h1>MCA Computer Department</h1>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="nav-container">
+            <a href="Home.html">About the Department</a>
+            <a href="HOD.html">HOD Profile</a>
+            <a href="Faculty.html">Faculty Details</a>
+            <a href="MCA_Association.html">MCA Association Details</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <h2 class="section-title">Our Faculty Members</h2>
+
+    <!-- Faculty Profiles Container -->
+    <div class="faculty-grid">
+        
+        <!-- Faculty 1 (HOD) -->
+        <div class="faculty-card">
+            <img src="im1.jpg" alt="Sreeja K">
+            <h2>Sreeja K</h2>
+            <div class="designation">Associate Prof. & HOD</div>
+        </div>
+
+        <!-- Faculty 2 -->
+        <div class="faculty-card">
+            <img src="im7.png" alt="R Sujitha">
+            <h2>R Sujitha</h2>
+            <div class="designation">Associate Professor</div>
+        </div>
+
+        <!-- Faculty 3 -->
+        <div class="faculty-card">
+            <img src="im2.jpg" alt="Jayanthi T">
+            <h2>Jayanthi T</h2>
+            <div class="designation">Associate Professor</div>
+        </div>
+
+        <!-- Faculty 4 -->
+        <div class="faculty-card">
+            <img src="im3.jpeg" alt="Subha Ramachandran">
+            <h2>Subha Ramachandran</h2>
+            <div class="designation">Assistant Professor</div>
+        </div>
+
+        <!-- Faculty 5 -->
+        <div class="faculty-card">
+            <img src="im4.jpg" alt="Rekha M Pillai">
+            <h2>Rekha M Pillai</h2>
+            <div class="designation">Associate Professor</div>
+        </div>
+
+        <!-- Faculty 6 -->
+        <div class="faculty-card">
+            <img src="im5.jpeg" alt="Dr. Sajitha A V">
+            <h2>Dr. Sajitha A V</h2>
+            <div class="designation">Associate Professor</div>
+        </div>
+
+        <!-- Faculty 7 -->
+        <div class="faculty-card">
+            <img src="im6.jpg" alt="Jeeja G S">
+            <h2>Jeeja G S</h2>
+            <div class="designation">Associate Professor</div>
+        </div>
+
+        <!-- Faculty 8 -->
+        <div class="faculty-card">
+            <img src="im8.jpeg" alt="Adhithya J V">
+            <h2>Adhithya J V</h2>
+            <div class="designation">Assistant Professor</div>
+        </div>
+
+    </div>
+
+</body>
+</html>

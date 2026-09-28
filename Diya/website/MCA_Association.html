@@ -1,0 +1,369 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Computer Department - MASTEC</title>
+    <style>
+        /* Base Reset & Lock Screen to Viewport */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f4f6f9;
+            color: #333;
+            height: 100vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden; /* Prevents overall page scrolling */
+        }
+
+        /* Header & Navigation Fixes */
+        h1 {
+            text-align: center;
+            color: #1a365d;
+            font-size: 1.8rem;
+            padding: 10px 0;
+            background: #f4f6f9;
+        }
+        nav {
+            background-color: #1a365d;
+            padding: 10px 0;
+            box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+        }
+        .nav-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+        }
+        .nav-container a {
+            color: #ffffff;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: color 0.2s;
+        }
+        .nav-container a:hover {
+            color: #3498db;
+        }
+
+        /* Main Compact Application Workspace */
+        .workspace {
+            flex: 1;
+            display: flex;
+            max-width: 1200px;
+            width: 100%;
+            margin: 0 auto;
+            padding: 15px;
+            gap: 15px;
+            overflow: hidden; /* Restricts overflow inside the app viewport */
+        }
+
+        /* Left Column: Intro & Year Filters */
+        .left-panel {
+            flex: 1;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            overflow-y: auto; /* Allows left panel to scroll if buttons exceed height */
+            padding-right: 5px;
+        }
+        .intro-box {
+            background: white;
+            padding: 15px;
+            border-radius: 6px;
+            border-left: 4px solid #3498db;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .intro-box h2 {
+            font-size: 1.2rem;
+            color: #1a365d;
+            margin-bottom: 5px;
+        }
+        .intro-box p {
+            font-size: 0.85rem;
+            color: #555;
+            line-height: 1.4;
+        }
+
+        /* Tab Controls Grid */
+        .tab-menu {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+        }
+        .tab-menu h2 {
+            font-size: 1.1rem;
+            color: #1a365d;
+        }
+        .tab-btn {
+            background: #e2e8f0;
+            border: none;
+            padding: 12px;
+            border-radius: 4px;
+            text-align: left;
+            font-weight: bold;
+            color: #4a5568;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        .tab-btn:hover {
+            background: #cbd5e1;
+        }
+        .tab-btn.active {
+            background: #1a365d;
+            color: white;
+        }
+
+        /* Right Column: Interactive Content Display Window */
+        .right-panel {
+            flex: 1.5;
+            background: white;
+            border-radius: 6px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+            position: relative;
+            overflow: hidden;
+        }
+        .tab-content {
+            display: none;
+            height: 100%;
+            padding: 20px;
+            flex-direction: column;
+            justify-content: flex-start;
+            overflow-y: auto; /* Allows text to scroll when it contains multiple paragraphs */
+        }
+        .tab-content.active {
+            display: flex;
+        }
+
+        .tab-content h3 {
+            color: #1a365d;
+            font-size: 1.3rem;
+            margin-bottom: 10px;
+        }
+        
+        /* Fixed Image Viewport Container */
+        .img-container {
+            width: 100%;
+            height: 320px; /* Increased height to give the full image more room */
+            background: #222222; /* Darker background so uncropped image margins look professional */
+            border-radius: 4px;
+            margin-bottom: 12px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0;
+        }
+        
+        /* Crucial Fix for Uncropped Images */
+        .img-container img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Shows the full image without clipping or cropping */
+        }
+        
+        .tab-content p {
+            font-size: 0.9rem;
+            color: #4a5568;
+            line-height: 1.5;
+            margin-bottom: 12px; /* Spacing for multi-paragraph layouts */
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Branding -->
+    <h1>MCA COMPUTER DEPARTMENT</h1>
+
+    <!-- Global Navigation -->
+    <nav>
+        <div class="nav-container">
+            <a href="Home.html">About the Department</a>
+            <a href="HOD.html">HOD Profile</a>
+            <a href="Faculty.html">Faculty Details</a>
+            <a href="MCA_Association.html">MCA Association Details</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- App Viewport Container -->
+    <div class="workspace">
+        
+        <!-- Left Side Controller Elements -->
+        <div class="left-panel">
+            <div class="intro-box">
+                <h2>MASTEC</h2>
+                <p>A forum of students and staff of MCA, striving toward technical excellence and total personality development through continuous seminars, competitions, and webinars.</p>
+            </div>
+
+            <div class="tab-menu">
+                <h2>Association Activities</h2>
+                <button class="tab-btn active" onclick="switchTab(event, 'm2026')">MASTEC-2026</button>
+                <button class="tab-btn" onclick="switchTab(event, 'm2025')">MASTEC-2025</button>
+                <button class="tab-btn" onclick="switchTab(event, 'm2024')">MASTEC-2024</button>
+                <button class="tab-btn" onclick="switchTab(event, 'm2023')">MASTEC-2023</button>
+                <button class="tab-btn" onclick="switchTab(event, 'm2022')">MASTEC-2022</button>
+                <button class="tab-btn" onclick="switchTab(event, 'm2021')">MASTEC-2021</button>
+                <button class="tab-btn" onclick="switchTab(event, 'm2019')">MASTEC-2019</button>
+            </div>
+        </div>
+
+        <!-- Right Side Display Engine -->
+        <div class="right-panel">
+            
+            <!-- 2026 Activity Window -->
+            <div id="m2026" class="tab-content active">
+                <h3>Mastec Inauguration 2026</h3>
+<br>
+                <div class="img-container">
+                    <img src="inaguration.jpeg" alt="Mastec Inauguration">
+
+                </div>
+<br>
+                <p>The Department of Master of Computer Applications (MCA), Mohandas College of Engineering and Technology, successfully organized the MASTEC Inauguration 2026 on 21st January 2026 (Wednesday). The event marked the formal inauguration of MASTEC activities for the academic year and aimed to motivate students through academic, technical, and co-curricular initiatives.
+</p><p>
+The inauguration was graced by the presence of Mr. Arif Mohammed, Director, JHF IT Innovations, as the Chief Guest. His participation added value and industry perspective to the event.
+</p><p>
+The programme commenced at 10:30 AM with a prayer, followed by a warm welcome address by Prof. Sreeja K., HoD in charge, Department of MCA. The inaugural session included the following highlights:
+</p><ul>
+<li>Presidential Address: V. Suresh Babu, Principal</li>
+<li>Address by Director: Sreekanth Narayanan</li>
+<li>MASTEC Report Presentation: Subha Ramachandran, Faculty Advisor, MASTEC</li>
+<li>Release of MASTEC Anthem and Website</li>
+<li>Prize Distribution</li>
+<li>Inaugural Address: Arif Mohammed, Director, JHF IT Innovations</li>
+<li>Vote of Thanks: Dani M. Panicker, Secretary, MASTEC</li></ul>
+<br>
+<p>The programme concluded successfully at 12:15 PM..</p>
+            </div>
+
+            <!-- 2025 Activity Window -->
+            <div id="m2025" class="tab-content">
+                <h3>Start Up Idea Competition ‘25</h3>
+                <div class="img-container">
+                    <img src="startup.jpeg" alt="Startup Idea Competition">
+                </div>
+               <p> The Department of Master of Computer Applications (MCA), Mohandas College of Engineering and Technology, under the banner of MASTEC, successfully organized Pixel2Prototype, a Startup Idea Competition. The event was conceptualized to nurture innovation, entrepreneurial thinking, and problem‑solving skills among students by encouraging them to transform creative ideas into feasible prototypes
+<p><h5>
+The primary objectives of Pixel2Prototype were:
+</h5><br><ul>
+<li>To promote innovation and creativity among students</li>
+<li>To encourage entrepreneurial mindset and startup culture</li>
+<li>To provide a platform for students to present real‑world problem‑solving ideas</li>
+<li>To bridge the gap between conceptual ideas and practical implementation</li></ul>
+<br>
+<p>Participants were required to register online through a Google Form. A QR code and registration link were provided in the event poster for easy access. Students submitted their innovative startup ideas within the stipulated deadline.</p>
+            </div>
+
+            <!-- 2024 Activity Window -->
+            <div id="m2024" class="tab-content">
+                <h3>MASTEC Technical Quiz Competition</h3>
+                <div class="img-container">
+                    <img src="quiz.png" alt="Technical Quiz">
+                </div>
+           <p>     The Department of MCA, Mohandas College of Engineering and Technology, successfully conducted the Technical Quiz Competition organized by MASTEC on 30th September 2024 at the MCA Seminar Hall. The event, held from 12:00 PM to 12:30 PM, witnessed enthusiastic participation from students across semesters, showcasing their technical knowledge and quick-thinking abilities.
+</p><p>
+The quiz aimed to test participants on diverse domains of computer applications, logical reasoning, and problem-solving, creating an engaging and competitive atmosphere. Students displayed great enthusiasm, teamwork, and presence of mind, making the event both exciting and intellectually stimulating.
+</p><p>
+After a tough battle of brains, the winners were announced:
+</p><h5>
+🥇 First Prize – Mohammed Shiroz & Akash S (S1 MCA)
+</h5>
+<h5>🥈 Second Prize – Arjun S & Aromal Udayan (S3 MCA)</h5>
+<br>
+<p>
+The winners were felicitated by the faculty of the MCA department, and their achievement was celebrated with applause and appreciation.
+</p><p>
+The event not only highlighted the technical acumen of the students but also encouraged peer learning and healthy competition. MASTEC continues to provide such platforms to nurture talent, teamwork, and innovation among MCA students.
+</p>
+
+            </div>
+
+            <!-- 2023 Activity Window -->
+            <div id="m2023" class="tab-content">
+                <h3>MCA Inauguration - MASTEC 2023</h3>
+                <div class="img-container">
+                    <img src="MCAinaguration.png" alt="MCA Inauguration 2023">
+                </div>
+                <p>MASTEC ’23 commenced with the inaugural address by Dr. Pradeep Shanmugham, AVP of Nest Digital, held at the Civil Auditorium on November 24, 2023, at 11:00 AM. The event opened with a warm welcome speech from Prof. Sreeja K, Head of the Department of MCA. Dr. Ashalatha Thampuran, Director of MCET, delivered the Presidential address, emphasizing the importance of technological advancements in today’s world. Principal Dr. S Sheela also addressed the gathering, highlighting the significance of such platforms in fostering innovation and learning.</p>
+                <p>Dr. Pradeep Shanmugham later delivered an insightful technical talk on the evolution and future prospects of technology. The Chief Guest was honored with a memento by Dr. Ashalatha Thampuran, recognizing their contribution to the event. Certificates were distributed to the winners of various competitions held during MASTEC-2023, celebrating their achievements and contributions to the field of technology. Ms. Neeraja B, Joint Secretary of MASTEC, extended heartfelt thanks to all participants and contributions to the field of technology.</p>
+            </div>
+
+            <!-- 2022 Activity Window -->
+            <div id="m2022" class="tab-content">
+
+         
+                <h3>MCA Association MASTEC Inauguration & Technical Events 2022</h3>
+                <div class="img-container">
+                    <img src="Mca2022.png" alt="MASTEC 2022">
+                </div>
+                <p>MASTEC was conducted on 24th November 2022 by MCA department at Mini Auditorium Civil Block. Mr. Anas Abdul Gafoor, Co-founder and CFO of Talrop was the chief guest on the occasion. The motive of this programme was to improve the overall development of the students. Various competitions were held as part of the programme.</p>
+                <p>The programme started with prayer and lighting the ceremonial lamp by the chief guest accompanied by Dr. Ashalatha Thampuran (Director of MCET), Dr. S Sheela (principal of MCET), Prof. Sreeja K (HOD of MCA Department) and some other leading dignitaries.</p>
+                <p>Dr. Ashalatha Thampuran delivered presidential address and Principal’s address was done by Dr. S. Sheela. The chief guest gave a motivating speech regarding the technical challenges talk about past, present and future growth of technologies. Afterwards Prof. Tomy Thomas (Training and placement Coordinator) delivered felicitation speech. Prizes were distributed to the winners of the events by chief guest.</p>
+<p>The chief guest Mr.Anas Abdul Gafoor was felicitated by the Director of MCET with a memento.
+</p><p>
+HODs and faculty members of various departments of the college attended the function. The inaugural session has been concluded with plan of action for the academic year 2022-23 by Aparna D came to an end with vote of thanks delivered by Prejin P.R Organizing Secretary.
+  </p>         
+ </div>
+
+            <!-- 2021 Activity Window -->
+            <div id="m2021" class="tab-content">
+                <h3>MASTECH Association Inauguration 2021</h3>
+                <div class="img-container">
+                    <img src="2021.png" alt="MASTEC 2021">
+                </div>
+                <p>The inauguration for the association Activities of MASTEC was conducted on 20th December 2021 at CGPC hall. The chief guest of the event was Ms. Jyothi Ramaswamy, Manager, Cyber Security Group, TCS. The inauguration was graced by the presence of Dr. Shabu S. (Principal-in-charge, MCET), Prof. Sreeja K (HOD, MCA) and along with student and staff community of the MCA department.</p>
+                <p>The function started with prayer. The welcome address was delivered by Prof. Sreeja K where she warmly welcomed the dignitaries and the student community and encouraged the students to be part of the student association activity and get benefited.</p>
+                <p>Association activities of Mastec 2021 was inaugurated by the chief guest Ms. Jyothi Ramaswamy, by lighting the lamp.The inaugural session came to an end with vote of thanks delivered by Mr. Gokul, MASTEC Secretary.</p>
+<p>In the afternoon section, various inter and intra department competitions were held as part of the programme.
+</p>
+<p>Certificates were also given to winners of various competitions conducted as part of the MASTEC-2021.</p>
+            </div>
+
+            <!-- 2019 Activity Window -->
+            <div id="m2019" class="tab-content">
+                <h3>Inauguration for the Association Activities of MASTEC 2019</h3>
+                <div class="img-container">
+                    <img src="2019.png" alt="MASTEC 2019">
+                </div>
+                <p>The inauguration for the Association activities of MASTEC for the academic year 2019-20 was conducted on 4th Oct 2019 at CGPC hall. The chief guest for the event was Mr. Ajith Nair (Director Delivery, Speridian Technologies Pvt. Ltd) and technical talk by Mr. Ramu Balachandran (Technical Architect, Speridian Technologies Pvt. Ltd). The inauguration was graced by the presence of Dr. Ashalatha Thampuran (Director, MCET), Dr. Sobha Manakkal (Principal in charge, MCET), Prof. Sreeja K. (HOD-in charge, MCA department) and along with the student and staff community of the department of Computer Applications.</p>
+                <p>The chief guest Mr. Ajith Nair was felicitated by the Director of MCET with a memento and he mentioned about the need for innovation. Mr. Ramu Balachandran gave a technical talk about past, present and future growth of technologies. Prof. Sreeja K. HOD-in charge, MCA department presented a memento to Mr. Ramu Balachandran. Prizes were distributed to the winners of the events by Prof. Sreeja K in MCA department.</p>
+                <p>HODs and faculty members of various departments of the college attended the function. The inaugural session came to an end with vote of thanks delivered by Mr. Abhijith, MASTEC Secretary.</p>
+            </div>
+
+        </div>
+    </div>
+
+    <!-- Script Block for Tab Navigation Logic -->
+    <script>
+        function switchTab(evt, targetYearId) {
+            // Hide all tab content panes completely
+            const contents = document.querySelectorAll('.tab-content');
+            contents.forEach(content => {
+                content.classList.remove('active');
+            });
+
+            // Remove highlighted active style from all navigation tab buttons
+            const buttons = document.querySelectorAll('.tab-btn');
+            buttons.forEach(button => {
+                button.classList.remove('active');
+            });
+
+            // Make the targeted text and image window view active
+            const targetContent = document.getElementById(targetYearId);
+            if (targetContent) {
+                targetContent.classList.add('active');
+            }
+
+            // Assign the highlight styling directly to the active clicked element 
+            if (evt && evt.currentTarget) {
+                evt.currentTarget.classList.add('active');
+            }
+        }
+    </script>
+</body>
+</html>

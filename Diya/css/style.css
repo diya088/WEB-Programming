@@ -1,0 +1,23 @@
+/* External CSS */
+
+body {
+    background-color: lightblue;
+    font-family: Arial, sans-serif;
+}
+
+h1 {
+    color: purple;
+    text-align: center;
+}
+
+h3 {
+    color: darkblue;
+    text-align: center;
+}
+
+.external {
+    color: white;
+    background-color: darkblue;
+    padding: 10px;
+    text-align: center;
+}

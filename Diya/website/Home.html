@@ -1,0 +1,277 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MCA Computer Department | Mohandas College</title>
+    <style>
+        /* Modern Reset & Base Styles */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: #f8fafc;
+            color: #334155;
+            line-height: 1.6;
+        }
+
+        /* Header & Branding */
+        header {
+            background-color: #ffffff;
+            padding: 20px 10px;
+            text-align: center;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .logo-container img {
+            max-height: 80px;
+            width: auto;
+            object-fit: contain;
+        }
+
+        /* Navigation Bar */
+        nav {
+            background-color: #1e3a8a;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        }
+
+        .nav-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+
+        .nav-container a {
+            color: #ffffff;
+            text-decoration: none;
+            padding: 16px 20px;
+            font-size: 0.95rem;
+            font-weight: 600;
+            transition: all 0.3s ease;
+        }
+
+        .nav-container a:hover {
+            background-color: #2563eb;
+            color: #ffffff;
+        }
+
+        /* Hero Image Section */
+        .hero-banner {
+            width: 100%;
+            height: 250px;
+            background-color: #cbd5e1;
+            overflow: hidden;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .hero-banner img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+
+        /* Main Layout */
+        .container {
+            max-width: 1100px;
+            margin: 40px auto;
+            padding: 0 20px;
+        }
+
+        /* Typography & Section Heading Styles */
+        h1, h2, h3 {
+            color: #0f172a;
+            margin-bottom: 15px;
+        }
+
+        h2 {
+            font-size: 1.8rem;
+            border-left: 5px solid #2563eb;
+            padding-left: 12px;
+            margin-top: 40px;
+        }
+
+        .program-title {
+            font-size: 2.2rem;
+            color: #1e3a8a;
+            margin-top: 10px;
+            margin-bottom: 5px;
+            border: none;
+            padding: 0;
+        }
+
+        .tagline {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #2563eb;
+            margin-bottom: 25px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        p {
+            margin-bottom: 16px;
+            font-size: 1.05rem;
+            color: #475569;
+            text-align: justify;
+        }
+
+        /* Grid Layouts for Content Elements */
+        .grid-two-col {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            margin-top: 30px;
+        }
+
+        @media (max-width: 768px) {
+            .grid-two-col {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        /* Content Blocks & Cards */
+        .card {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            border: 1px solid #f1f5f9;
+        }
+
+        /* Custom Styled Lists */
+        .styled-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+            gap: 12px;
+            margin-top: 15px;
+        }
+
+        .styled-list li {
+            background: #ffffff;
+            padding: 12px 16px;
+            border-radius: 6px;
+            border-left: 4px solid #10b981;
+            font-weight: 500;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.02);
+            display: flex;
+            align-items: center;
+        }
+
+        .styled-list li::before {
+            content: "✓";
+            color: #10b981;
+            font-weight: bold;
+            margin-right: 10px;
+        }
+
+        .structure-list {
+            list-style: none;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+            gap: 10px;
+            margin: 20px 0;
+        }
+
+        .structure-list li {
+            background: #eff6ff;
+            color: #1e40af;
+            padding: 10px 15px;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            text-align: center;
+            border: 1px solid #bfdbfe;
+        }
+
+        /* Info Badge style */
+        .badge {
+            background-color: #1e3a8a;
+            color: white;
+            padding: 6px 12px;
+            border-radius: 4px;
+            display: inline-block;
+            font-size: 0.9rem;
+            margin-top: 10px;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Top Branding Header -->
+    <header>
+        <div class="logo-container">
+           <center> <h1> DEPARTMENT OF COMPUTER APPLICATIONS - MCA </h1> </center>
+        </div>
+    </header>
+
+    <!-- Navigation Menu -->
+    <nav>
+        <div class="nav-container">
+            <a href="#">About the Department</a>
+            <a href="HOD.html">HOD Profile</a>
+            <a href="Faculty.html">Faculty Details</a>
+            <a href="MCA_Association.html">MCA Association Details</a>
+            <a href="Gallery.html">Gallery</a>
+        </div>
+    </nav>
+
+    <!-- Department Hero Image Banner -->
+    <div class="hero-banner">
+        <img src="image22.jpg" alt="MCA Department Campus Image">
+    </div>
+
+    <!-- Main Content wrapper -->
+    <div class="container">
+        
+        <!-- About Section -->
+        <section>
+            <h1 class="program-title">MASTER OF COMPUTER APPLICATIONS (MCA)</h1>
+            
+            <p>The Master of Computer Applications (MCA) at Mohandas College of Engineering and Technology (MCET) is a two-year postgraduate programme affiliated with APJ Abdul Kalam Technological University (KTU), Kerala. The programme is designed to develop highly skilled computing professionals capable of addressing the evolving challenges of the global technology ecosystem.</p>
+            
+         
+         
+        </section>
+
+        <!-- Dynamic Grid for Structure and Eligibility -->
+        <div class="grid-two-col">
+            <!-- Programme Structure Card -->
+            <div class="card">
+                <h3>Programme Structure</h3>
+                <span class="badge">Duration: 2 Years (4 Semesters)</span>
+               
+                
+                <ul class="structure-list">
+                    <li>Core Courses</li>
+                    <li>Professional Electives</li>
+                    <li>Laboratory Courses</li>
+                    <li>Mini Project , Major Project</li>
+                    <li>Seminar , Viva</li>
+                    <li>Expert Workshops</li>
+                    
+                   
+                </ul>
+            </div>
+
+            
+            <div class="card" style="display: flex; flex-direction: column; justify-content: space-between;">
+                <div>
+                    <h3>Eligibility Criteria</h3>
+                    <p>Candidates who have completed a Bachelor's degree in the relevant discipline from a recognized university and satisfy the eligibility criteria prescribed by APJ Abdul Kalam Technological University (KTU) and the Government of Kerala are eligible for admission.</p>
+                    <p>Admissions are conducted strictly in accordance with the regulations of the University and competent statutory authorities.</p>
+                </div>
+                
+                <div style="margin-top: 20px; padding-top: 20px; border-top: 1px solid #e2e8f0;">
+                    <h3>The MCET Advantage</h3>
