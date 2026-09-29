@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Online Exam</title>
+</head>
+
+<body>
+
+    <h1>Online Exam</h1>
+
+    <form id="exam">
+
+        <p>1. What is the capital of India?</p>
+        <input type="radio" name="q1" value="Delhi"> Delhi<br>
+        <input type="radio" name="q1" value="Mumbai"> Mumbai<br>
+        <input type="radio" name="q1" value="Kochi"> Kochi<br>
+
+        <p>2. Which language is used to create web pages?</p>
+        <input type="radio" name="q2" value="HTML"> HTML<br>
+        <input type="radio" name="q2" value="Python"> Python<br>
+        <input type="radio" name="q2" value="Java"> Java<br>
+
+        <p>3. Which language is used for web page interactivity?</p>
+        <input type="radio" name="q3" value="JavaScript"> JavaScript<br>
+        <input type="radio" name="q3" value="HTML"> HTML<br>
+        <input type="radio" name="q3" value="CSS"> CSS<br>
+
+        <br>
+
+        <button type="button" onclick="checkAnswers()">Submit</button>
+
+    </form>
+
+    <h2 id="result"></h2>
+
+    <script>
+
+        function checkAnswers() {
+
+            let score = 0;
+
+            let q1 = document.querySelector('input[name="q1"]:checked');
+            let q2 = document.querySelector('input[name="q2"]:checked');
+            let q3 = document.querySelector('input[name="q3"]:checked');
+
+            if (q1 && q1.value == "Delhi") {
+                score++;
+            }
+
+            if (q2 && q2.value == "HTML") {
+                score++;
+            }
+
+            if (q3 && q3.value == "JavaScript") {
+                score++;
+            }
+
+            document.getElementById("result").innerHTML =
+                "Your Score: " + score + " / 3";
+        }
+
+    </script>
+
+</body>
+</html>
